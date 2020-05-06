@@ -1,0 +1,21 @@
+<div class="row justify-content-center mt-5">
+    <div class="col-9">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-center">Login</h4>
+                <form class="p-4" (ngSubmit)="enter()">
+                    <input type="text" 
+                           name="name" 
+                           [(ngModel)]="name"
+                           class="form-control"
+                           autofocus
+                    ><br>
+                    <button [disabled]="name.trim().length === 0" class="btn btn-primary btn-block">
+                        Ingrear
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

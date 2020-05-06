@@ -11,7 +11,7 @@ export class ChatService {
     
     sendMessage(message:string) { 
         const payload = { 
-            de: 'Agustín', 
+            sender: this.webSocketService.getUser().name, 
             body: message
         };
         this.webSocketService.emit('message', payload);
@@ -19,5 +19,9 @@ export class ChatService {
 
     getMessages() { 
         return this.webSocketService.listen('new message');
+    };
+
+    getPrivateMessages() { 
+        return this.webSocketService.listen('private-msg')
     };
 };
